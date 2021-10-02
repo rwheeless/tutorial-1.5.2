@@ -20,40 +20,45 @@ void Start()
 
 void Update()
 {
-     if (Input.GetKeyDown(KeyCode.W))
+    if (Input.GetKeyDown(KeyCode.W))
         {
           musicSource.clip = musicClipOne;
           musicSource.Play();
           anim.SetInteger("State", 1);
         }
 
-     if (Input.GetKeyUp(KeyCode.W))
+    if (Input.GetKeyUp(KeyCode.W))
         {
           musicSource.Stop();
           anim.SetInteger("State", 0);
         }
 
-     if (Input.GetKeyDown(KeyCode.R))
+    if (Input.GetKeyDown(KeyCode.R))
         {
           musicSource.clip = musicClipTwo;
           musicSource.Play();
           anim.SetInteger("State", 2);
         }
 
-     if (Input.GetKeyUp(KeyCode.R))
+    if (Input.GetKeyUp(KeyCode.R))
         {
           musicSource.Stop();
           anim.SetInteger("State", 0);
         }
 
-     if (Input.GetKeyDown(KeyCode.L))
+    if (Input.GetKeyDown(KeyCode.L))
         {
           musicSource.loop = true;
         }
 
-     if (Input.GetKeyUp(KeyCode.L))
+    if (Input.GetKeyUp(KeyCode.L))
         {
           musicSource.loop = false;
+        }
+
+    if (Input.GetKey("escape"))
+        {
+          Application.Quit();
         }
    }
 }
